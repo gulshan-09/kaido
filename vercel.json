@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "name":"progect_deployment",
+    "builds":[{"src": "inde.js", "use":"@vercel/node"}],
+    "routes":[{"src":"/(.*)", "dest":"/inde.js"}]
+}
