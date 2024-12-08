@@ -4,8 +4,8 @@ const crypto = require("crypto");
 const createHttpError = require("http-errors");
 const cors = require('cors');
 
-const src1 = express();
-src1.use(cors());
+const kaido = express();
+kaido.use(cors());
 
 const USER_AGENT ="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36";
 const ACCEPT_ENCODING_HEADER = "gzip, deflate, br";
@@ -198,7 +198,7 @@ module.exports = MegaCloud;
 // Create an instance of MegaCloud
 const megaCloudInstance = new MegaCloud();
 
-src1.get('/src-server/:id', async (req, res) => {
+kaido.get('/src-server-kaido/:id', async (req, res) => {
     try {
         const servernum = parseInt(req.params.id);
         const serverlink = `https://kaido.to/ajax/episode/sources?id=${servernum}`;
@@ -227,4 +227,4 @@ src1.get('/src-server/:id', async (req, res) => {
     }
 });
 
-module.exports = src1;
+module.exports = kaido;
